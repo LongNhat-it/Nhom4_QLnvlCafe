@@ -80,7 +80,7 @@ class InventoryPage:
         self.tree.tag_configure('low', background='#ffcccc')
 
     # cong thuc
-    def setup_tab_recipe(self):
+    def setup_tab_recipe(self): #Giao diện bảng công thức
         toolbar = tk.Frame(self.tab2, bg="white", pady=10)
         toolbar.pack(fill="x")
         CustomButton(toolbar, text="➕ Tạo công thức", command=self.open_recipe_form, style_type="success").pack(
@@ -95,7 +95,7 @@ class InventoryPage:
         self.recipe_tree.pack(fill="both", expand=True, padx=10, pady=10)
 
     # thong ke
-    def setup_tab_stats(self):
+    def setup_tab_stats(self): #Giao diện thống kê
         toolbar = tk.Frame(self.tab3, bg="white", pady=10)
         toolbar.pack(fill="x")
         CustomButton(toolbar, text="📊 TẠO BẢNG THỐNG KÊ TỒN KHO", command=self.generate_stats,
@@ -108,14 +108,14 @@ class InventoryPage:
         self.stats_tree.pack(fill="both", expand=True, padx=10, pady=10)
 
     # bao cao
-    def setup_tab_reports(self):
+    def setup_tab_reports(self): #Giao diện báo cáo
         frame = tk.Frame(self.tab4, bg="white", padx=20, pady=20)
         frame.pack(fill="both", expand=True)
         tk.Label(frame, text="📊 BÁO CÁO TỔNG QUAN HÀNG HÓA", font=("Arial", 14, "bold"), bg="white").pack(anchor="center")
         self.txt_report = tk.Text(frame, font=("Courier New", 12), bg="#F8F9FA", padx=10, pady=10)
         self.txt_report.pack(fill="both", expand=True, pady=10)
 
-    def generate_report_logic(self):
+    def generate_report_logic(self): #Bảng báo cáo kho hàng tự động
         """Tự động tính toán khi xem Tab Báo cáo"""
         if not os.path.exists(self.file_path): return
         total_money, total_items, low_stock = 0, 0, []
@@ -147,7 +147,7 @@ Hệ thống tự động cập nhật số liệu mới nhất.
 """
         self.txt_report.insert("1.0", content)
 
-    def generate_stats(self):
+    def generate_stats(self): #Tạo nguyên vật liệu
         for i in self.stats_tree.get_children(): self.stats_tree.delete(i)
         if os.path.exists(self.file_path):
             with open(self.file_path, "r", encoding="utf-8") as f:
@@ -157,7 +157,7 @@ Hệ thống tự động cập nhật số liệu mới nhất.
                     thanh_tien = int(r[3]) * int(r[5])
                     self.stats_tree.insert("", "end", values=(r[1], r[3], f"{thanh_tien:,} VNĐ"))
 
-    def refresh_data(self):
+    def refresh_data(self): #Làm mới nguyên vật liệu
         for i in self.tree.get_children(): self.tree.delete(i)
         if not os.path.exists(self.file_path):
             with open(self.file_path, "w", newline="", encoding="utf-8") as f:
@@ -171,11 +171,11 @@ Hệ thống tự động cập nhật số liệu mới nhất.
                     tag = 'low' if int(r[3]) < 10 else ''
                     self.tree.insert("", "end", values=(idx, r[0], r[1], r[2], r[3], r[4], r[5]), tags=(tag,))
 
-    def edit_item(self):
+    def edit_item(self): #Chỉnh sửa nguyên vật liệu
         sel = self.tree.selection()
         if sel: self.open_form("CẬP NHẬT NGUYÊN LIỆU", self.tree.item(sel[0])['values'][1:])
 
-    def delete_item(self):
+    def delete_item(self): #Xóa nguyên vật liệu
         sel = self.tree.selection()
         if not sel or not messagebox.askyesno("Xác nhận", "Xóa nguyên liệu này?"): return
         ma_xoa = self.tree.item(sel[0])['values'][1]
