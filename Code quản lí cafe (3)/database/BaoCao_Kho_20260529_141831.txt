@@ -1,0 +1,24 @@
+==================================================
+              BÁO CÁO THÁNG 05/2026
+==================================================
+PHẦN 1: THỐNG KÊ TÀI CHÍNH KHO HÀNG
+   - Tổng số mặt hàng: 9 loại
+   - Tổng chi phí thanh toán kho: 209,514,704 VNĐ
+
+PHẦN 2: CHI TIẾT HÀNG HÓA NHẬP KHO
+   + Nhóm: Bột             | Tên: Matcha               | Đơn vị: Kilogram (kg)
+   + Nhóm: Kẹo             | Tên: Kẹo marshmallow      | Đơn vị: Bao (5kg)
+   + Nhóm: Nhóm Chất lỏng  | Tên: Trà Oolong           | Đơn vị: Chai
+   + Nhóm: Nhóm Hạt        | Tên: Cafe voi             | Đơn vị: Kilogram (kg)
+   + Nhóm: Nhóm Hạt        | Tên: Cafe chồn            | Đơn vị: Kilogram (kg)
+   + Nhóm: Nhóm Chất lỏng  | Tên: Nước cam             | Đơn vị: Hộp
+   + Nhóm: Nhóm Chất lỏng  | Tên: Trà chanh            | Đơn vị: Chai
+   + Nhóm: Nhóm Bột        | Tên: bột bay              | Đơn vị: Túi/Gói (500g)
+   + Nhóm: Nhóm Bột        | Tên: hạt                  | Đơn vị: Túi/Gói (1kg)
+
+PHẦN 3: THỐNG KÊ CHI TIÊU TOÀN NĂM (KỲ ĐÁNH GIÁ)
+   - Tổng số đợt chi tiêu đã ghi nhận (12 kỳ): 9 đợt
+   - Tổng số tiền chi tiêu cả năm: 209,514,704 VNĐ
+--------------------------------------------------
+Hệ thống tự động đồng bộ dữ liệu lúc: 14:17:45
+==================================================
